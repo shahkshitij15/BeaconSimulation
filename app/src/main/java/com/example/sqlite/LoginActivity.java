@@ -2,6 +2,7 @@ package com.example.sqlite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
                 String password = e2.getText().toString();
                 Boolean login = db.login(email,password);
                 if(login==true){
-                    Toast.makeText(getApplicationContext(),"Successfully Login",Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(LoginActivity.this,BeaconDetection.class));
                 }
                 else{
                     Toast.makeText(getApplicationContext(),"Try Again Mate!",Toast.LENGTH_SHORT).show();
